@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, Plus, Users, Clock, CheckCircle, Circle, Edit3, Trash2, Settings, UserPlus, X } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 
-// Supabase configuration from environment variables
+
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
