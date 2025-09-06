@@ -4,19 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
-
-# Configure secrets scanning to ignore expected environment variables
-[build.processing]
-  skip_processing = false
-
-# Disable secrets scanning for specific keys that are expected to be in the build
-[build.processing.secrets]
-  skip_scanning = false
-
-# Ignore specific environment variables that are expected to be in the build
-[build.processing.secrets.omit_keys]
-  VITE_SUPABASE_URL = true
-  VITE_SUPABASE_ANON_KEY = true
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_URL,VITE_SUPABASE_ANON_KEY"
 
 # Optional: Configure redirects for SPA
 [[redirects]]
