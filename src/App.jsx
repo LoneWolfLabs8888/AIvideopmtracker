@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, Plus, Users, Clock, CheckCircle, Circle, Edit3, Trash2, Settings, UserPlus, X } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 
-// hide the keys
+// Environment variables for Supabase
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+// Validate environment variables
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error('Missing Supabase environment variables. Please check your .env file and Netlify configuration.');
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const App = () => {
